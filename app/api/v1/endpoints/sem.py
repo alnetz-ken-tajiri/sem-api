@@ -5,7 +5,7 @@ from app.services.sem_service import run_sem
 router = APIRouter()
 
 # app/api/v1/endpoints/sem.py
-@router.post("/analyze", response_model=SEMResponse)
+@router.post("/", response_model=SEMResponse)
 def analyze_sem(req: SEMRequest):
     try:
         fit = run_sem(req.measurement, req.structural, req.data)
